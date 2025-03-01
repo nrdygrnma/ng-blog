@@ -135,7 +135,7 @@ button:hover {
 }
 
 /* =======================
-    Destination Card
+    Gallery Card
    ======================= */
 
 .card-container {
@@ -289,4 +289,39 @@ button:hover {
 
 .card-hover:hover .gradient-overlay {
   opacity: 0;
+}
+
+/* =======================
+    Custom Link
+   ======================= */
+.custom-link {
+  position: relative;
+  color: var(--color-text-300);
+  text-decoration: none;
+  transition: color var(--transition-slow);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-700);
+  letter-spacing: var(--letter-spacing-xs);
+}
+
+.custom-link:hover,
+.custom-link.active {
+  color: var(--color-primary-500);
+}
+
+.custom-link:after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary-500);
+  transition: width var(--transition-slow);
+}
+
+.custom-link:hover:after,
+.custom-link.active:after {
+  width: 100%;
 }

@@ -6,6 +6,10 @@
       >
         nrdygrnma's Blog
       </h1>
+      <MainNav />
     </div>
   </header>
 </template>
+<script lang="ts" setup>
+import MainNav from "~/components/base/MainNav.vue";
+</script>
