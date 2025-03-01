@@ -1,0 +1,293 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+/* Root Variables */
+:root {
+  /* Typography */
+  --font-primary: "Raleway", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-size-base: 16px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+
+  /* Colors */
+  /* Primary (Tailwind Pink) */
+  --color-primary-300: #f9a8d4; /* Light Pink */
+  --color-primary-400: #f472b6; /* Medium Pink */
+  --color-primary-500: #ec4899; /* Base Pink */
+  --color-primary-700: #be185d; /* Dark Pink */
+
+  /* Secondary (Teal) */
+  --color-secondary-300: #81e6d9;
+  --color-secondary-400: #4fd1c5;
+  --color-secondary-500: #38b2ac; /* Base Teal */
+  --color-secondary-700: #2c7a7b;
+
+  /* Text Colors */
+  --color-text-300: #666;
+  --color-text-400: #444;
+  --color-text-500: #333; /* Base Text */
+  --color-text-700: #222;
+
+  /* Background Colors */
+  --color-bg-300: #fafafa;
+  --color-bg-400: #f5f5f5; /* Light Background */
+  --color-bg-500: #e5e7eb; /* Neutral Grey Background */
+  --color-bg-dark: #1e1e2d; /* Dark Mode Background */
+
+  --color-white: #fff;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+
+  /* Letter Spacing */
+  --letter-spacing-xs: 0.1rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Transition */
+  --transition-slow: 0.3s ease-in-out;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-primary), sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-500);
+  background-color: var(--color-bg-400);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary), sans-serif;
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-700);
+  color: var(--color-primary-500);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-500);
+  color: var(--color-primary-400);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-500);
+  color: var(--color-secondary-500);
+}
+
+a {
+  transition: var(--transition-slow);
+}
+
+a:hover {
+  color: var(--color-primary-400);
+}
+
+button {
+  cursor: pointer;
+  transition: var(--transition-slow);
+  background: var(--color-primary-500);
+  color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+}
+
+button:hover {
+  background: var(--color-primary-400);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* =======================
+    Destination Card
+   ======================= */
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 0 !important;
+}
+
+.card-content {
+  margin-top: var(--spacing-md);
+}
+
+.card-header-container {
+  position: relative;
+  height: 100%;
+}
+
+.card-image-container {
+  overflow: hidden;
+  height: 100%;
+}
+
+.card-image {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card-hover:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-title-container {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: 0;
+  padding-left: var(--spacing-md);
+  z-index: 10;
+  transition:
+    bottom var(--transition-slow),
+    transform-gpu;
+}
+
+.card-hover:hover .card-title-container {
+  bottom: 5.5rem;
+}
+
+.card-title-text {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-400);
+  letter-spacing: var(--letter-spacing-xs);
+  text-transform: uppercase;
+  color: white;
+  display: inline-block;
+}
+
+.card-title-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-secondary-500);
+  transition: width var(--transition-slow);
+  transition-delay: 0.1s;
+}
+
+.card-hover:hover .card-title-text::after {
+  width: 40px;
+}
+
+.card-description-container {
+  position: absolute;
+  width: 100%;
+  bottom: var(--spacing-md);
+  left: 0;
+  padding-inline: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  opacity: 0;
+  z-index: 11;
+  transition:
+    opacity var(--transition-slow),
+    bottom var(--transition-slow),
+    transform-gpu;
+}
+
+.card-description-text {
+  font-size: var(--font-size-xs);
+  color: white;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  bottom: var(--spacing-lg);
+}
+
+.card-hover:hover .card-description-container {
+  opacity: 1;
+  bottom: var(--spacing-sm);
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 0;
+  opacity: 1;
+  transition:
+    opacity var(--transition-fast),
+    transform-gpu;
+  mix-blend-mode: multiply;
+}
+
+.gradient-overlay-hover {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    transform-gpu;
+  mix-blend-mode: multiply;
+}
+
+.card-hover:hover .gradient-overlay-hover {
+  opacity: 1;
+}
+
+.card-hover:hover .gradient-overlay {
+  opacity: 0;
+}
