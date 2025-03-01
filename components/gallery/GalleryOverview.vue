@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts" setup>
-import GalleryCard from "./GalleryCard.vue"
+import GalleryCard from "./GalleryCard.vue";
 
-const router = useRouter()
+const router = useRouter();
 const galleries = [
   {
     title: "Honduras",
@@ -99,6 +99,6 @@ const galleries = [
 ];
 
 const generateLink = (title: string) => {
-    return `/galleries/${title.toLowerCase().replace(/\s+/g, '-')}`;
+  return `/gallery/${title.toLowerCase().replace(/\s+/g, "-")}`;
 };
 </script>

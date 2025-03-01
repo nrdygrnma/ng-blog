@@ -4,4 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@una-ui/nuxt", "@nuxtjs/tailwindcss"],
   css: ["~/assets/css/main.css", "~/assets/css/reset.css"],
+  router: {
+    options: {
+      linkActiveClass: "active",
+      linkExactActiveClass: "exact-active",
+    },
+  },
 });
